@@ -1,0 +1,13 @@
+RPMS
+Makefile
+installroot
+harbour-sapphire
+*.list
+*.a
+*.o
+*.so
+*.so.*
+*.moc
+*.qm
+*.pro.user
+moc_*

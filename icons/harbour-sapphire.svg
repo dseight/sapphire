@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="86px" height="86px" viewBox="0 0 86 86" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 64 (93537) - https://sketch.com -->
+    <title>harbour-sapphire</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <radialGradient cx="36.1143445%" cy="62.8990402%" fx="36.1143445%" fy="62.8990402%" r="71.2811655%" id="radialGradient-1">
+            <stop stop-color="#76F3FF" offset="0%"></stop>
+            <stop stop-color="#174AD0" offset="100%"></stop>
+        </radialGradient>
+        <path d="M43,0.3 C19.418,0.3 0.3,19.418 0.3,43 L0.3,84.277 C0.3,85.063 0.937,85.7 1.723,85.7 L43,85.7 C66.585,85.7 85.7,66.582 85.7,43 C85.7,19.418 66.585,0.3 43,0.3 Z" id="path-2"></path>
+    </defs>
+    <g id="harbour-sapphire" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <mask id="mask-3" fill="white">
+            <use xlink:href="#path-2"></use>
+        </mask>
+        <use id="Background" fill="url(#radialGradient-1)" fill-rule="nonzero" xlink:href="#path-2"></use>
+        <g id="Sapphire" mask="url(#mask-3)">
+            <g transform="translate(30.000000, 56.000000) rotate(45.000000) translate(-30.000000, -56.000000) translate(-23.000000, 14.000000)">
+                <polygon id="bg" fill="#0300CC" points="53 84 1.17683641e-14 31 26 4 53 1.82145965e-17 80 4 106 31"></polygon>
+                <polygon id="8" fill="#0F0094" points="53 84 84 31 106 31"></polygon>
+                <polygon id="7" fill="#0054F5" points="22 31 53 84 84 31"></polygon>
+                <polygon id="6" fill="#001CD1" points="0 31 22 31 53 84"></polygon>
+                <polygon id="5" fill="#1701C1" transform="translate(93.000000, 17.500000) scale(-1, 1) translate(-93.000000, -17.500000) " points="80 31 102 31 106 4"></polygon>
+                <polygon id="4" fill="#013BD6" transform="translate(68.500000, 15.500000) scale(-1, 1) translate(-68.500000, -15.500000) " points="57 4 53 31 84 0"></polygon>
+                <polygon id="3" fill="#3187FD" points="22 31 53 0 84 31"></polygon>
+                <polygon id="2" fill="#B7DFFE" points="26 4 22 31 53 0"></polygon>
+                <polygon id="1" fill="#4993FD" points="0 31 22 31 26 4"></polygon>
+            </g>
+        </g>
+    </g>
+</svg>
