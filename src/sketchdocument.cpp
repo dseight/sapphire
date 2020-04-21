@@ -87,14 +87,17 @@ void SketchDocument::update(const QJsonObject &data)
         pagesMap.remove(id);
     }
 
-    // Add new pages
-    QList<SketchPage *> newPages;
-    for (const auto &pageObject : pagesMap) {
-        newPages.append(new SketchPage(pageObject, this));
+    // Insert new pages
+    for (int i = 0; i < pages.size(); ++i) {
+        const auto page = pages.at(i);
+        const auto object = page.toObject();
+        const auto id = object.value("id").toString();
+        if (!contains(id)) {
+            insert(i, new SketchPage(object, this));
+        }
     }
-    // FIXME: page ordering goes off compared to Sketch, as new ones are always
-    // just appended
-    append(newPages);
+
+    // FIXME: pages reordering is not handled
 }
 
 void SketchDocument::updateArtboard(const QString &id, const QJsonObject &data)
