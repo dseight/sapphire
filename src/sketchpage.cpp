@@ -86,6 +86,7 @@ void SketchPage::update(const QJsonObject &data)
         artboard->deleteLater();
         remove(artboard);
     }
+    bool artboardsRemoved = !artboardsToRemove.empty();
 
     // Update existing artboards. Note that only artboard information is updated
     // on manifest change, artboard content updates are handled separately.
@@ -95,16 +96,21 @@ void SketchPage::update(const QJsonObject &data)
         artboardsMap.remove(id);
     }
 
-    // Add new artboards
-    QList<SketchArtboard *> newArtboards;
-    for (const auto &artboardObject : artboardsMap) {
-        newArtboards.append(new SketchArtboard(artboardObject, this));
+    // Insert new artboards
+    bool artboardsAdded = false;
+    for (int i = 0; i < artboards.size(); ++i) {
+        const auto artboard = artboards.at(i);
+        const auto object = artboard.toObject();
+        const auto id = object.value("id").toString();
+        if (!contains(id)) {
+            insert(i, new SketchArtboard(object, this));
+            artboardsAdded = true;
+        }
     }
-    // FIXME: artboards ordering goes off compared to Sketch, as new ones
-    // are always just appended
-    append(newArtboards);
 
-    if (!artboardsToRemove.empty() || !newArtboards.empty()) {
+    // FIXME: artboards reordering is not handled
+
+    if (artboardsRemoved || artboardsAdded) {
         updateThumbnailHeight();
     }
 }
