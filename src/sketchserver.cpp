@@ -80,8 +80,10 @@ void SketchServer::connect()
     });
 
     QObject::connect(&m_ws, &QWebSocket::disconnected, this, [=]() {
-        m_connected = false;
-        emit connectionStatusChanged();
+        if (m_connected) {
+            m_connected = false;
+            emit connectionStatusChanged();
+        }
     });
 
     m_ws.open(url);
