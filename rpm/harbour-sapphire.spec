@@ -30,7 +30,7 @@ BuildRequires: pkgconfig(qmdnsengine)
 
 # Bundle qmdnsengine library into package
 mkdir -p %{buildroot}%{_datadir}/%{name}/lib
-cp %{_libdir}/libqmdnsengine.so.* %{buildroot}%{_datadir}/%{name}/lib
+cp -d %{_libdir}/libqmdnsengine.so.* %{buildroot}%{_datadir}/%{name}/lib
 
 %files
 %{_bindir}/%{name}
