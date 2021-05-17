@@ -2,8 +2,7 @@ Name: harbour-sapphire
 Summary: Sapphire - Unofficial Sketch Mirror
 Version: 0.1.0
 Release: 1
-Group: Qt/Qt
-License: GPL-2.0-or-later
+License: GPLv2
 Source0: %{name}-%{version}.tar.bz2
 Requires: sailfishsilica-qt5 >= 1.1.83
 BuildRequires: pkgconfig(Qt5Core)
@@ -20,7 +19,7 @@ BuildRequires: pkgconfig(qmdnsengine)
 %{summary}.
 
 %prep
-%setup -q
+%autosetup
 
 %build
 %qmake5 -r VERSION=%{version}
@@ -34,7 +33,6 @@ mkdir -p %{buildroot}%{_datadir}/%{name}/lib
 cp %{_libdir}/libqmdnsengine.so.* %{buildroot}%{_datadir}/%{name}/lib
 
 %files
-%defattr(-,root,root,-)
 %{_bindir}/%{name}
 %{_datadir}/%{name}
 %{_datadir}/applications/%{name}.desktop
