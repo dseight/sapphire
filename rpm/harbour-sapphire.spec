@@ -10,10 +10,7 @@ BuildRequires: pkgconfig(Qt5Qml)
 BuildRequires: pkgconfig(Qt5WebSockets)
 BuildRequires: pkgconfig(sailfishapp)
 BuildRequires: pkgconfig(mlite5)
-BuildRequires: pkgconfig(qmdnsengine)
-
-%define __provides_exclude_from ^%{_datadir}/.*$
-%define __requires_exclude ^libqmdnsengine.*$
+BuildRequires: cmake
 
 %description
 %{summary}.
@@ -22,15 +19,11 @@ BuildRequires: pkgconfig(qmdnsengine)
 %autosetup
 
 %build
-%qmake5 -r VERSION=%{version}
+%cmake -DVERSION=%{version}
 %make_build
 
 %install
-%qmake5_install
-
-# Bundle qmdnsengine library into package
-mkdir -p %{buildroot}%{_datadir}/%{name}/lib
-cp -d %{_libdir}/libqmdnsengine.so.* %{buildroot}%{_datadir}/%{name}/lib
+%make_install
 
 %files
 %{_bindir}/%{name}
