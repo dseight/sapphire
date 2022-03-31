@@ -4,3 +4,8 @@ X-Nemo-Application-Type=silica-qt5
 Name=Sapphire
 Icon=harbour-sapphire
 Exec=harbour-sapphire
+
+[X-Sailjail]
+OrganizationName=com.dseight
+ApplicationName=sapphire
+Permissions=Internet
