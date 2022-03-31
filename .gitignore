@@ -9,5 +9,11 @@ harbour-sapphire
 *.so.*
 *.moc
 *.qm
-*.pro.user
 moc_*
+CMakeCache.txt
+CMakeFiles/
+CPackConfig.cmake
+CPackSourceConfig.cmake
+cmake_install.cmake
+*_autogen
+install_manifest.txt
